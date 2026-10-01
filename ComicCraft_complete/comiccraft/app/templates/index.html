@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ComicCraft — AI Comic Creator</title><link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header class="site-header"><div><h1>ComicCraft</h1><p>Turn an idea into a five-panel comic.</p></div></header>
+<main class="container">
+  <section class="hero card"><div><span class="eyebrow">AI STORY STUDIO</span><h2>Your story. Five panels. One downloadable comic.</h2><p>Describe your idea, choose the character, world, mood, and visual style. ComicCraft builds the outline, story, illustrations, and PDF.</p></div></section>
+  <form class="card form-grid" action="/generate" method="post" id="comic-form">
+    <label class="full">Story Prompt<textarea name="story_prompt" required maxlength="2000" placeholder="A brave fox exploring an enchanted forest..."></textarea></label>
+    <label>Main Character<input name="character_name" required maxlength="80" value="Finn" placeholder="Finn"></label>
+    <label>Setting<select name="setting"><option>forest</option><option>school</option><option>space</option><option>city</option><option>underwater kingdom</option></select></label>
+    <label>Story Tone<select name="tone"><option>light-hearted</option><option>dramatic</option><option>poetic</option><option>funny</option></select></label>
+    <label>Art Style<select name="art_style"><option>anime</option><option>comic book</option><option>pixel art</option><option>realistic</option></select></label>
+    <div class="full form-actions"><button type="submit" id="generate-btn">Create My Comic</button><span id="status" class="muted">Five panels are generated in sequence.</span></div>
+  </form>
+  <section class="card tips"><h3>Local development</h3><p>For a quick end-to-end test, the project defaults to mock images. Add a Gemini API key for real story generation and switch the image provider when you are ready for AI artwork.</p></section>
+</main><script src="/static/js/app.js"></script>
+</body></html>
